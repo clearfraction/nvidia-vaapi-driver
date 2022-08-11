@@ -1,13 +1,16 @@
 %define abi_package %{nil}
+%global gitdate 2022
+%global commit 8e66a2fe429a57fda1bbd735842fe8fec87d1d7b
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           nvidia-vaapi-driver
 Version:        0.0.6
-Release:        1
+Release:        1.%{shortcommit}
 Summary:        A VA-API implementation that uses NVDEC as a backend
 
 License:        MIT
 URL:            https://github.com/elFarto/nvidia-vaapi-driver/
-Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
+Source0:        %{url}/archive/%{commit}/%{name}-%{shortcommit}.tar.gz
 
 Requires:       gst-plugins-bad-lib
 
@@ -29,7 +32,7 @@ Provides: %{name} = %{version}-%{release}
 This is a VA-API implementation that uses NVDEC as a backend.
 
 %prep
-%autosetup -p1
+%setup -n %{name}-%{commit}
 
 %build
 export LANG=C.UTF-8
