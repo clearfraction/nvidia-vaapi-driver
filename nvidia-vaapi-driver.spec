@@ -1,5 +1,5 @@
 %define abi_package %{nil}
-%global gitdate 2022
+%global gitdate 20220719
 %global commit 8e66a2fe429a57fda1bbd735842fe8fec87d1d7b
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
@@ -11,8 +11,6 @@ Summary:        A VA-API implementation that uses NVDEC as a backend
 License:        MIT
 URL:            https://github.com/elFarto/nvidia-vaapi-driver/
 Source0:        %{url}/archive/%{commit}/%{name}-%{shortcommit}.tar.gz
-
-Requires:       gst-plugins-bad-lib
 
 BuildRequires:  libva-dev
 BuildRequires:  gcc
