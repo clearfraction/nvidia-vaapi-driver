@@ -1,11 +1,11 @@
 %define abi_package %{nil}
-%global gitdate 20221020
-%global commit 09c424dcc1ff214b3a6f3cba1f61bf7ff40afead
+%global gitdate 20221201
+%global commit 6e8b0d067c52c3a7e0c3de745337e6e733c59207
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           nvidia-vaapi-driver
 Version:        0.0.7
-Release:        2.%{shortcommit}
+Release:        3.%{shortcommit}
 Summary:        A VA-API implementation that uses NVDEC as a backend
 
 License:        MIT
@@ -49,8 +49,8 @@ export CXXFLAGS="$CXXFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -fl
 # The gstreamer-codecparsers dependency is required for VP9 support. Fail early if missing.
 sed -i -e "s/^\(gst_codecs_deps = dependency.*required.*:\) false/\1 true/" meson.build
 
-CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson \
-    --libdir=lib64 --prefix=/usr --buildtype=plain  builddir 
+CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" \
+    meson setup --libdir=lib64 --prefix=/usr --buildtype=plain builddir
 
 ninja -v -C builddir
 
