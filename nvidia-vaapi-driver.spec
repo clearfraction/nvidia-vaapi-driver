@@ -1,4 +1,3 @@
-%define abi_package %{nil}
 %global gitdate 20221217
 %global commit bb7f6fcb66e595647bc3c1bc5a4592479c5d2e0b
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
