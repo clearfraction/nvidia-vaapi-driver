@@ -1,10 +1,10 @@
-%global gitdate 20221218
-%global commit 7113c20184e32abeb6cb3857392a1549bbcd7a5a
+%global gitdate 20221216
+%global commit bb7f6fcb66e595647bc3c1bc5a4592479c5d2e0b
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           nvidia-vaapi-driver
 Version:        0.0.8
-Release:        5.%{shortcommit}
+Release:        6.%{shortcommit}
 Summary:        A VA-API implementation that uses NVDEC as a backend
 
 License:        MIT
