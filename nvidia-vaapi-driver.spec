@@ -1,5 +1,5 @@
-%global gitdate 20230108
-%global commit 7d4a27a99e54632867cb5a326efca86b41e257a2
+%global gitdate 20230114
+%global commit 05915997787541ff585e079a083127a393d18170
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           nvidia-vaapi-driver
