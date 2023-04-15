@@ -19,7 +19,7 @@ BuildRequires:  libX11-dev
 BuildRequires:  mesa-dev
 BuildRequires:  gstreamer-dev
 BuildRequires:  gst-plugins-bad-dev
-BuildRequires:  nv-codec-headers
+BuildRequires:  nv-codec-headers-dev
 BuildRequires:  pkg-config
 BuildRequires:  pkgconfig(egl)
 BuildRequires:  pkgconfig(gstreamer-codecparsers-1.0)
