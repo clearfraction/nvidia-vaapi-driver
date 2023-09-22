@@ -8,16 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Download artifact
-        uses: dawidd6/action-download-artifact@v2
-        with:
-          repo: clearfraction/mass-rebuild
-          workflow: mass-rebuild.yml
-          check_artifacts: true
       - name: Building a package
         run: |
-          curl -LO https://raw.githubusercontent.com/clearfraction/tools/master/build.sh && chmod +x build.sh
-          docker run --privileged --cap-add=SYS_ADMIN --security-opt apparmor:unconfined -v $(pwd):/home clearlinux:latest sh -c "cd /home && ./build.sh"
+          curl -LO https://raw.githubusercontent.com/clearfraction/tools/master/build-core.sh && chmod +x build-core.sh
+          docker run --privileged --cap-add=SYS_ADMIN --security-opt apparmor:unconfined -v $(pwd):/home clearlinux:latest sh -c "cd /home && ./build-core.sh"
       - name: Upload result
         uses: actions/upload-artifact@v2
         with:
